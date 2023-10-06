@@ -25,8 +25,8 @@ React + tailwindcss + Go
 
 ## TODO
 
--[ ] Toast 提示优化
--[ ] 用户信息、tags 增改
+- [ ] Toast 提示优化
+- [ ] 用户信息、tags 增改
 
 ## 结构
 
