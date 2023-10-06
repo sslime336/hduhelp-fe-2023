@@ -7,6 +7,7 @@ React + tailwindcss + Go
 - 用户信息的增删查
 - 根据用户姓名 Fuzzy 查询
 - 分页
+- 鉴权(fake, localStage)
 
 ## Blink
 
@@ -24,7 +25,6 @@ React + tailwindcss + Go
 
 ## TODO
 
--[ ] 鉴权
 -[ ] Toast 提示优化
 -[ ] 用户信息、tags 增改
 

@@ -1,5 +1,5 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
-import { AuthProvider } from "../components/Auth";
+import { AuthProvider } from "../store/auth";
 import Console from "../pages/Console";
 import NotFound from "../pages/errors/404";
 import Home from "./../pages/Home";
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
   {
     path: "/login",
     loader: ({ request }) => {
-      if (AuthProvider.isAuthenticated) {
+      if (AuthProvider.get().isAuthenticated) {
         return redirect("/");
       }
       return null;
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/console",
     loader: ({ request }) => {
-      if (!AuthProvider.isAuthenticated) {
+      if (!AuthProvider.get().isAuthenticated) {
         let params = new URLSearchParams();
         params.set("callback", new URL(request.url).pathname);
         return redirect("/login?" + params.toString());

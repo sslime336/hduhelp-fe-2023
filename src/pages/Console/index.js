@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthProvider } from "../../components/Auth";
+import { AuthProvider } from "../../store/auth";
+import AuthStatus from "../../components/AuthStatus";
 import Button from "../../components/Button";
 import Popup from "../../components/Popup";
-import UserStatus from "../../components/UserStatus";
 import { ImageSetting, ImageUserSetting } from "../../resources";
 import About from "./item/About";
 import Setting from "./item/Setting";
@@ -36,8 +36,10 @@ export default function Console() {
 
   const showAuthInfo = () => {
     setPopup(true);
-    setCurPopComp(<UserStatus close={() => setPopup(false)} />);
+    setCurPopComp(<AuthStatus close={() => setPopup(false)} />);
   };
+
+  const authInfo = AuthProvider.get();
 
   return (
     <>
@@ -75,9 +77,9 @@ export default function Console() {
             <div className="flex grow">
               <img src={ImageUserSetting} alt="芝士头像" />
               <div className="ml-2 flex flex-col">
-                <p>{AuthProvider.name}</p>
+                <p>{authInfo.name}</p>
                 <div className="rounded border border-black text-xs">
-                  {AuthProvider.role}
+                  {authInfo.role}
                 </div>
               </div>
             </div>

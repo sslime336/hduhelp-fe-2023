@@ -1,11 +1,11 @@
-export default function Input({ placeholder, onChange, error }) {
+export const Input = ({ placeholder, type, onChange, error, defaultValue }) => {
   return (
     <div className="relative">
       {error.once && error.err ? (
         <>
           <div className="ml-2">
             <input
-              type="text"
+              type={type || "text"}
               onChange={onChange}
               className="w-full rounded-lg border border-red-600 p-1 text-sm text-gray-900"
               placeholder={placeholder}
@@ -18,7 +18,7 @@ export default function Input({ placeholder, onChange, error }) {
       ) : (
         <div className="ml-2">
           <input
-            type="text"
+            type={type || "text"}
             onChange={onChange}
             className="w-full rounded-lg border p-1 text-sm text-gray-900"
             placeholder={placeholder}
@@ -27,4 +27,4 @@ export default function Input({ placeholder, onChange, error }) {
       )}
     </div>
   );
-}
+};

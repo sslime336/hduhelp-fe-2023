@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import Button from "../../../../components/Button";
-import Input from "../../../../components/Input";
+import { Input } from "../../../../components/Input";
 import { ImageDefaultUserAvatar } from "../../../../resources";
 import { createUser } from "../../../../services/user";
 import { isEmail, isPhoneNumber } from "../../../../utils/verify";
@@ -131,7 +131,9 @@ export default function NewUser({ callback, close }) {
                 close();
               } else {
                 inputError.forEach((err, idx) => {
-                  updateInputError(idx, true, `请填写正确的${err.id}`);
+                  if (!err.once || err.err) {
+                    updateInputError(idx, true, `请填写正确的${err.id}`);
+                  }
                 });
                 // TODO: 改成 toast
                 // alert('参数错误')
