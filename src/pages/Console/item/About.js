@@ -3,12 +3,12 @@ import OnDev from "../../../components/OnDev";
 
 export default function About() {
   useEffect(() => {
-    document.title = '关于'
+    document.title = "关于";
   }, []);
 
   return (
     <>
-      <OnDev info='About 页面' />
+      <OnDev info="About 页面" />
     </>
-  )
+  );
 }

@@ -1,13 +1,12 @@
 export default function Popup({ pop, component }) {
-  return (
-    pop ?
-      <div className='fixed top-0 left-0 h-screen w-screen'>
-        <div className='z-0 fixed bg-black opacity-20 h-full w-full' />
-        <div className='z-1 fixed flex justify-center items-center h-full w-full'>
-          {component}
-        </div>
+  return pop ? (
+    <div className="fixed left-0 top-0 h-screen w-screen">
+      <div className="fixed z-0 h-full w-full bg-black opacity-20" />
+      <div className="z-1 fixed flex h-full w-full items-center justify-center">
+        {component}
       </div>
-      :
-      <></>
-  )
+    </div>
+  ) : (
+    <></>
+  );
 }

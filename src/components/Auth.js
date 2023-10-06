@@ -1,19 +1,20 @@
-import {useNavigate} from "react-router-dom";
-import {useContext, useEffect} from "react";
-import {AuthCtx} from "../context";
-
-export default function Auth({children}) {
-  // const navigate = useNavigate()
-  // const auth = useContext(AuthCtx)
-  //
-  // useEffect(() => {
-  //   if (auth.authStatus.online === !false) {
-  //     navigate('/login')
-  //   }
-  // }, []);
-
-
-  return (
-    <>{children}</>
-  )
+export default function Auth({ children }) {
+  return <>{children}</>;
 }
+
+export const AuthProvider = {
+  isAuthenticated: false,
+  name: null,
+  role: null,
+
+  async signin({ username, password }) {
+    await new Promise((r) => setTimeout(r, 500));
+    AuthProvider.isAuthenticated = true;
+    AuthProvider.name = username;
+  },
+  async signout() {
+    await new Promise((r) => setTimeout(r, 500));
+    AuthProvider.isAuthenticated = false;
+    AuthProvider.name = "";
+  },
+};

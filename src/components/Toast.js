@@ -1,7 +1,7 @@
 export default function ToastContainer() {
   return (
-    <div className='fixed top-8 right-8 shadow-xl w-80 h-36 bg-blue-300 rounded-xl'>
+    <div className="fixed right-8 top-8 h-36 w-80 rounded-xl bg-blue-300 shadow-xl">
       msg
     </div>
-  )
+  );
 }

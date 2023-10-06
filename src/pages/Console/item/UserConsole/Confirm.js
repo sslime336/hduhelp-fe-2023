@@ -2,20 +2,23 @@ import Button from "../../../../components/Button";
 
 export default function Confirm({ text, close, next }) {
   return (
-    <div className='flex flex-col w-96 h-fit bg-white shadow-xl rounded-lg p-4 items-center'>
+    <div className="flex h-fit w-96 flex-col items-center rounded-lg bg-white p-4 shadow-xl">
       {text}
-      <div className='flex w-fit mt-4'>
-        {
-          next === null ? null :
-            <Button onClick={() => {
-              next()
-              close()
-            }}>确定</Button>
-        }
-        <div className='ml-2'>
+      <div className="mt-4 flex w-fit">
+        {next === null ? null : (
+          <Button
+            onClick={() => {
+              next();
+              close();
+            }}
+          >
+            确定
+          </Button>
+        )}
+        <div className="ml-2">
           <Button onClick={close}>关闭</Button>
         </div>
       </div>
     </div>
-  )
+  );
 }

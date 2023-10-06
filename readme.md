@@ -11,18 +11,22 @@ React + tailwindcss + Go
 ## Blink
 
 ![img](docs/imgs/img.png)
+
 ### Fuzzy
+
 ![img_1](docs/imgs/img_1.png)
+
 ### 新建用户
+
 ![img_2](docs/imgs/img_2.png)
+
 ![img_3](docs/imgs/img_3.png)
 
 ## TODO
 
-1. 鉴权
-2. Toast 提示优化
-3. 用户信息、tags 增改
-4. 迁移到 Vite 和 ts
+-[ ] 鉴权
+-[ ] Toast 提示优化
+-[ ] 用户信息、tags 增改
 
 ## 结构
 

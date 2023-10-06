@@ -1,5 +1,3 @@
 export default function Unknown() {
-  return (
-    <>Unknown error happened.</>
-  )
+  return <>Unknown error happened.</>;
 }
