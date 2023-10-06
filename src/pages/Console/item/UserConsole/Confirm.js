@@ -1,6 +1,6 @@
 import Button from "../../../../components/Button";
 
-export default function Confirm({text, close, next}) {
+export default function Confirm({ text, close, next }) {
   return (
     <div className='flex flex-col w-96 h-fit bg-white shadow-xl rounded-lg p-4 items-center'>
       {text}

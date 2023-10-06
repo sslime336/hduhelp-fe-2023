@@ -1,8 +1,8 @@
-import {useEffect, useRef} from "react";
-import Button from "../../../../components/Button";
-import {ImageRefresh} from "../../../../resources";
-import {UserListItem} from "./UserItem";
 import uFuzzy from "@leeoniya/ufuzzy";
+import { useEffect, useRef } from "react";
+import Button from "../../../../components/Button";
+import { ImageRefresh } from "../../../../resources";
+import { UserListItem } from "./UserItem";
 
 export function Main(
   {
@@ -37,7 +37,7 @@ export function Main(
             setSelectAll(true)
           }
           setUserList(userListShell)
-        }} showInfo={() => showUserInfo(user)}/>
+        }} showInfo={() => showUserInfo(user)} />
       )
     }
     if (fuzzyGuard.current === '') {
@@ -86,7 +86,7 @@ export function Main(
 
   useEffect(() => {
     if (paging.currentIdx + 1 > Math.ceil(onStageUserList.length / paging.itemsPerPage)) {
-      let page = {...paging}
+      let page = { ...paging }
       page.currentIdx = 0
       setPaging(page)
     }
@@ -97,15 +97,15 @@ export function Main(
       <div className='flex border border-gray-100 bg-[#f9fafb] h-14 items-center'>
         <div className='flex ml-2 w-20'>
           <input type='checkbox' className='mt-1.5 h-4 w-4' checked={selectAll}
-                 onChange={() => toggleAllSelections()}/>
+            onChange={() => toggleAllSelections()} />
           <label className='ml-1'>全选</label>
         </div>
         <input placeholder='输入关键词搜索' className='p-2 ml-2 flex w-30 border border-gray-300 rounded-sm'
-               onChange={e => fuzzySearch(e.target.value)}
+          onChange={e => fuzzySearch(e.target.value)}
         />
         <div className='flex justify-end items-center w-full mr-4'>
           <p className='mr-4'>上次更新: {lastUpdateTime}</p>
-          <Button onClick={() => refreshUserList()}><img src={ImageRefresh} alt='刷新'/></Button>
+          <Button onClick={() => refreshUserList()}><img src={ImageRefresh} alt='刷新' /></Button>
         </div>
       </div>
 
@@ -119,12 +119,12 @@ export function Main(
         <div className='grow flex justify-end items-center mr-4'>
           <p className='ml-2'>每页
             <select className='p-1 m-2 border-2 rounded-lg'
-                    defaultValue='cnt15' onChange={e => {
-              let itemsPerPage = parseInt(e.target.value.substring(3))
-              let page = {...paging}
-              page.itemsPerPage = itemsPerPage
-              setPaging(page)
-            }}>
+              defaultValue='cnt15' onChange={e => {
+                let itemsPerPage = parseInt(e.target.value.substring(3))
+                let page = { ...paging }
+                page.itemsPerPage = itemsPerPage
+                setPaging(page)
+              }}>
               <option value='cnt5'>5</option>
               <option value='cnt15'>15</option>
               <option value='cnt30'>30</option>

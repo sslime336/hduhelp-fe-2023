@@ -1,7 +1,7 @@
-import {ImageDefaultUserAvatar} from "../../../../resources";
 import Button from "../../../../components/Button";
+import { ImageDefaultUserAvatar } from "../../../../resources";
 
-export default function UserInfo({user, close}) {
+export default function UserInfo({ user, close }) {
   return (
     <div className='w-96 h-fit bg-white shadow-xl rounded-lg'>
       <div className='p-4 h-full w-full'>
@@ -15,17 +15,17 @@ export default function UserInfo({user, close}) {
                   user.tags ?
                     (
                       user.tags.map((tag, idx) => (
-                          <label key={idx}
-                                 className='flex p-1 items-center justify-center border border-gray-300 rounded h-5 font-thin text-xs ml-1'>
-                            <p className='flex'>
-                              {tag}
-                            </p>
-                            <div
-                              className='flex justify-center items-center ml-1 mr-0.5 bg-gray-100 hover:bg-gray-200 hover:cursor-pointer w-4 h-4 rounded-full text-center'>
-                              <p className='flex justify-center items-center mb-1 mt-0.5'>×</p>
-                            </div>
-                          </label>
-                        )
+                        <label key={idx}
+                          className='flex p-1 items-center justify-center border border-gray-300 rounded h-5 font-thin text-xs ml-1'>
+                          <p className='flex'>
+                            {tag}
+                          </p>
+                          <div
+                            className='flex justify-center items-center ml-1 mr-0.5 bg-gray-100 hover:bg-gray-200 hover:cursor-pointer w-4 h-4 rounded-full text-center'>
+                            <p className='flex justify-center items-center mb-1 mt-0.5'>×</p>
+                          </div>
+                        </label>
+                      )
                       ))
                     :
                     null

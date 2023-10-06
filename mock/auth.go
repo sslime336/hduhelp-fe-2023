@@ -17,7 +17,12 @@ func Login(c *gin.Context) {
 	}
 
 	if req.Username == "slime" && req.Password == "123456" {
-		c.JSON(200, gin.H{"token": "927721"})
+		c.JSON(200, gin.H{
+			"token":    "927721",
+			"staff_id": "00000000",
+			"name":     "slime",
+			"role":     "超级管理员",
+		})
 	}
 	log.Println("userHandler")
 }

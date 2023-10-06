@@ -1,5 +1,5 @@
+import { useEffect } from "react";
 import OnDev from "../../../components/OnDev";
-import {useEffect} from "react";
 
 export default function About() {
   useEffect(() => {
@@ -8,7 +8,7 @@ export default function About() {
 
   return (
     <>
-      <OnDev info='About 页面'/>
+      <OnDev info='About 页面' />
     </>
   )
 }

@@ -1,7 +1,7 @@
-import {mock} from "../utils/net";
+import { mock } from "../utils/net";
 
-function getUserList() {
-  return mock.get('/users').then(resp => resp.data)
+async function getUserList() {
+  await mock.get('/users').then(resp => resp.data)
 }
 
 async function removeUserById(id) {
@@ -15,4 +15,5 @@ async function createUser(user) {
 function updateUser() {
 }
 
-export {getUserList, removeUserById, createUser, updateUser}
+export { createUser, getUserList, removeUserById, updateUser };
+

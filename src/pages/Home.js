@@ -1,7 +1,8 @@
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import {AudioZakoZako, ImageTakanashiHoshino} from "../resources";
 import {AuthCtx} from "../context";
 import {Link} from "react-router-dom";
+import Auth from "../components/Auth";
 
 export default function Home() {
   useEffect(() => {
@@ -10,13 +11,16 @@ export default function Home() {
 
   const zakoAudioRef = useRef(null);
 
+  const [authStatus, setAuthStatus] = useState({
+    online: false,
+    staffId: null,
+    name: null,
+    role: null,
+    token: null,
+  })
+
   return (
-    <AuthCtx.Provider value={{
-      online: false,
-      staffId: null,
-      name: null,
-      token: null,
-    }}>
+    <AuthCtx.Provider value={{authStatus, setAuthStatus}}>
       <div className='flex justify-center items-center h-screen w-screen'>
         <div>
           <audio ref={zakoAudioRef} src={AudioZakoZako}>
@@ -25,7 +29,7 @@ export default function Home() {
           <div
             onClick={() => zakoAudioRef.current.play()}
             className=' overflow-hidden w-96 h-96 rounded-full transition duration-300 hover:shadow-xl cursor-pointer'>
-            <img src={ImageTakanashiHoshino} alt=' 星野大叔'/>
+            <img src={ImageTakanashiHoshino} alt=' 星野大叔' />
           </div>
           <div className=' flex flex-col mt-10'>
             <Link to='/console' className=' text-center transition duration-300 hover:text-blue-400'>控制台</Link>

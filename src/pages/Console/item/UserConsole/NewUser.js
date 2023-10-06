@@ -1,11 +1,11 @@
+import { useRef, useState } from "react";
 import Button from "../../../../components/Button";
-import {ImageDefaultUserAvatar} from "../../../../resources";
-import {useRef, useState} from "react";
-import {createUser} from "../../../../services/user";
 import Input from "../../../../components/Input";
-import {isEmail, isPhoneNumber} from "../../../../utils/verify";
+import { ImageDefaultUserAvatar } from "../../../../resources";
+import { createUser } from "../../../../services/user";
+import { isEmail, isPhoneNumber } from "../../../../utils/verify";
 
-export default function NewUser({callback, close}) {
+export default function NewUser({ callback, close }) {
   const newUserRef = useRef({
     staff_id: '',
     name: '',
@@ -14,10 +14,10 @@ export default function NewUser({callback, close}) {
   })
 
   const [inputError, setInputError] = useState([
-    {id: '学号', once: false, err: false},
-    {id: '姓名', once: false, err: false},
-    {id: '手机号', once: false, err: false},
-    {id: '电子邮箱', once: false, err: false},
+    { id: '学号', once: false, err: false },
+    { id: '姓名', once: false, err: false },
+    { id: '手机号', once: false, err: false },
+    { id: '电子邮箱', once: false, err: false },
   ])
   const updateInputError = (index, err, msg) => {
     let shell = [...inputError]
@@ -31,7 +31,7 @@ export default function NewUser({callback, close}) {
     <div className='flex flex-col w-96 h-fit bg-white shadow-xl rounded-lg'>
       <div className='flex h-16 mt-4 justify-center'>
         {/*TODO: 头像上传*/}
-        <img className='h-full' src={ImageDefaultUserAvatar} alt='upload'/>
+        <img className='h-full' src={ImageDefaultUserAvatar} alt='upload' />
       </div>
       <div className='flex justify-center mt-2'>
         <div className='flex flex-col items-end'>
@@ -53,7 +53,7 @@ export default function NewUser({callback, close}) {
               } else {
                 updateInputError(0, false, '')
               }
-            }}/>
+            }} />
           </div>
 
           <div className='flex justify-center h-8 mt-4'>
@@ -65,7 +65,7 @@ export default function NewUser({callback, close}) {
               } else {
                 updateInputError(1, false, '')
               }
-            }}/>
+            }} />
           </div>
 
           <div className='flex justify-center h-8 mt-4'>
@@ -79,7 +79,7 @@ export default function NewUser({callback, close}) {
               } else {
                 updateInputError(2, false, '')
               }
-            }}/>
+            }} />
           </div>
 
           <div className='flex justify-center h-8 mt-4'>
@@ -93,7 +93,7 @@ export default function NewUser({callback, close}) {
               } else {
                 updateInputError(3, false, '')
               }
-            }}/>
+            }} />
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-export default function NavSubTitle({text}) {
+export default function NavSubTitle({ text }) {
   return (
     <>
       <li className='rounded mt-1 ml-1 mr-1 h-10 flex place-items-center'>
