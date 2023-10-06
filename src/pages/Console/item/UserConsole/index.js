@@ -9,6 +9,7 @@ import Confirm from "./Confirm";
 import { Main } from "./Main";
 import NewUser from "./NewUser";
 import UserInfo from "./UserInfo";
+import toast from "react-hot-toast";
 
 export default function UserConsole() {
   const [userList, setUserList] = useState([]);
@@ -38,6 +39,9 @@ export default function UserConsole() {
         setPaging({ currentIdx: 0, itemsPerPage: 15 });
       }
     });
+    toast("用户信息已更新", {
+      icon: "ℹ️",
+    });
   };
 
   const createUser = () => {
@@ -66,6 +70,7 @@ export default function UserConsole() {
                   await removeUserById(targetUser.id);
                 }
                 refreshUserList();
+                toast.success("用户删除成功!");
               }
             : null
         }
@@ -92,11 +97,11 @@ export default function UserConsole() {
               <Button onClick={createUser}>新建</Button>
             </div>
             <Button
-              onClick={() =>
+              onClick={() => {
                 removeUser(
                   userList.filter((user) => user.selected === true).length,
-                )
-              }
+                );
+              }}
             >
               删除
             </Button>

@@ -4,6 +4,7 @@ import { Input } from "../../../../components/Input";
 import { ImageDefaultUserAvatar } from "../../../../resources";
 import { createUser } from "../../../../services/user";
 import { isEmail, isPhoneNumber } from "../../../../utils/verify";
+import toast from "react-hot-toast";
 
 export default function NewUser({ callback, close }) {
   const newUserRef = useRef({
@@ -129,14 +130,14 @@ export default function NewUser({ callback, close }) {
                 await createUser(newUserRef.current);
                 callback();
                 close();
+                toast.success("新用户创建成功!");
               } else {
                 inputError.forEach((err, idx) => {
                   if (!err.once || err.err) {
                     updateInputError(idx, true, `请填写正确的${err.id}`);
                   }
                 });
-                // TODO: 改成 toast
-                // alert('参数错误')
+                toast.error("录入的用户信息不合法");
               }
             }}
           >

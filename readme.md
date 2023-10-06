@@ -8,6 +8,7 @@ React + tailwindcss + Go
 - 根据用户姓名 Fuzzy 查询
 - 分页
 - 鉴权(fake, localStage)
+- Toast 轻提示
 
 ## Blink
 
@@ -25,7 +26,6 @@ React + tailwindcss + Go
 
 ## TODO
 
-- [ ] Toast 提示优化
 - [ ] 用户信息、tags 增改
 
 ## 结构

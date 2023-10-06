@@ -203,7 +203,7 @@ export function Main({
               });
             }}
           >
-            &gt;{" "}
+            &gt;
           </Button>
         </div>
       </div>
