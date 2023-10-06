@@ -24,6 +24,10 @@ React + tailwindcss + Go
 
 ![img_3](docs/imgs/img_3.png)
 
+### Toast
+
+![toast](docs/imgs/toast.png)
+
 ## TODO
 
 - [ ] 用户信息、tags 增改
