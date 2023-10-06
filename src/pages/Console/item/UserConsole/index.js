@@ -80,7 +80,13 @@ export default function UserConsole() {
 
   const showUserInfo = (user) => {
     setPopup(true);
-    setCurPopComp(<UserInfo user={user} close={() => setPopup(false)} />);
+    setCurPopComp(
+      <UserInfo
+        user={user}
+        close={() => setPopup(false)}
+        refreshUserList={refreshUserList}
+      />,
+    );
   };
 
   return (

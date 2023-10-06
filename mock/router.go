@@ -10,5 +10,6 @@ func makeRoute(engine *gin.Engine) {
 		r.PATCH("/user/:id", UpdateUser)
 		r.POST("/user", NewUser)
 		r.POST("/login", Login)
+		r.POST("/reset", ResetDate)
 	}
 }

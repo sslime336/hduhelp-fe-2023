@@ -9,5 +9,6 @@ export const ImageNotFound = "/imgs/404.jpg";
 export const ImageEmail = "/imgs/email.svg";
 export const ImageClose = "/imgs/close.svg";
 export const ImageZako = "/imgs/zako.png";
+export const ImageBatteryCharging = "/imgs/battery-charging.svg";
 
 export const AudioZakoZako = "/audio/zakozako.mp3";

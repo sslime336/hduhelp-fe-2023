@@ -1,8 +1,10 @@
 import uFuzzy from "@leeoniya/ufuzzy";
 import { useEffect, useRef } from "react";
 import Button from "../../../../components/Button";
-import { ImageRefresh } from "../../../../resources";
+import { ImageBatteryCharging, ImageRefresh } from "../../../../resources";
 import { UserListItem } from "./UserItem";
+import { resetUserData } from "../../../../services/user";
+import toast from "react-hot-toast";
 
 export function Main({
   userList,
@@ -138,6 +140,19 @@ export function Main({
           <Button onClick={() => refreshUserList()}>
             <img src={ImageRefresh} alt="刷新" />
           </Button>
+          <div className="ml-1">
+            <Button
+              onClick={async () => {
+                await resetUserData();
+                toast("用户信息已重置", {
+                  icon: "⚠️",
+                });
+                refreshUserList();
+              }}
+            >
+              <img src={ImageBatteryCharging} alt="重置" />
+            </Button>
+          </div>
         </div>
       </div>
 

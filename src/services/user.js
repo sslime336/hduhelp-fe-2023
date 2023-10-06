@@ -12,6 +12,12 @@ async function createUser(user) {
   await mock.post("/user", user).catch((err) => console.log(err));
 }
 
-function updateUser() {}
+async function updateUser(user) {
+  await mock.patch(`/user/${user.id}`, user).catch((err) => console.log(err));
+}
 
-export { createUser, getUserList, removeUserById, updateUser };
+async function resetUserData() {
+  await mock.post("/reset").catch((err) => console.log(err));
+}
+
+export { createUser, getUserList, removeUserById, updateUser, resetUserData };

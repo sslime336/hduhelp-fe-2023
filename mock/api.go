@@ -92,3 +92,8 @@ func NewUser(c *gin.Context) {
 	})
 	c.Status(200)
 }
+
+func ResetDate(c *gin.Context) {
+	Users = append([]User(nil), backup...)
+	c.JSON(200, "用户已重置")
+}

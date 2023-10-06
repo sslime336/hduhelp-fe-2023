@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 export default function App() {
   return (
     <>
-      <Toaster />
+      <Toaster reverseOrder={true} />
       <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
     </>
   );

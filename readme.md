@@ -31,6 +31,7 @@ React + tailwindcss + Go
 ## TODO
 
 - [ ] 用户信息、tags 增改
+- [ ] 加点动画
 
 ## 结构
 
