@@ -4,33 +4,16 @@ React + tailwindcss + Go
 
 ## Features
 
-- 用户信息(包含tags)的增删改查
-- 根据用户姓名 Fuzzy 查询
+- 用户信息(包含tags)的 CRUD
+- 根据用户姓名、tag的 Fuzzy 查询
 - 分页
 - 鉴权(fake, localStage)
 - Toast 轻提示
-
-## Blink
-
-![img](docs/imgs/img.png)
-
-### Fuzzy
-
-![img_1](docs/imgs/img_1.png)
-
-### 新建用户
-
-![img_2](docs/imgs/img_2.png)
-
-![img_3](docs/imgs/img_3.png)
-
-### Toast
-
-![toast](docs/imgs/toast.png)
+- batteries-included(mock data)
 
 ## TODO
 
-- [ ] 加点动画
+- [ ] 响应式布局
 
 ## 结构
 

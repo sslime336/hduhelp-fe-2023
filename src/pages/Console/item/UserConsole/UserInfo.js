@@ -153,6 +153,10 @@ export default function UserInfo({ user, close, refreshUserList }) {
             <div className="flex w-fit">
               <Button
                 onClick={async () => {
+                  if (JSON.stringify(curUser) === JSON.stringify(user)) {
+                    close();
+                    return;
+                  }
                   await updateUser(curUser);
                   refreshUserList();
                   close();

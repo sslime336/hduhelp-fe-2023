@@ -1,10 +1,10 @@
 import uFuzzy from "@leeoniya/ufuzzy";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "../../../../components/Button";
 import { ImageBatteryCharging, ImageRefresh } from "../../../../resources";
 import { UserListItem } from "./UserItem";
 import { resetUserData } from "../../../../services/user";
-import toast from "react-hot-toast";
+import { Toast } from "../../../../utils/toast";
 
 export function Main({
   userList,
@@ -23,6 +23,7 @@ export function Main({
     setSelectAll(!selectAll);
     setUserList(userListShell);
   };
+  const [showBatteryHint, setShowBatteryHint] = useState(false);
 
   useEffect(() => {
     document.title = "用户管理";
@@ -88,7 +89,9 @@ export function Main({
       intraContr: "'\\p{L}{1,2}\\b",
     };
     let uf = new uFuzzy(opts);
-    let haystack = [...userList].map((user) => user.name);
+    let haystack = [...userList].map((user) =>
+      user.name + user.tags ? user.tags.map((tag) => tag + " ") : "",
+    );
     let matched = uf.filter(haystack, target);
     if (matched === null) {
       return;
@@ -132,7 +135,7 @@ export function Main({
         </div>
         <input
           placeholder="输入关键词搜索"
-          className="w-30 ml-2 flex rounded-sm border border-gray-300 p-2"
+          className="w-30 ml-2 flex border-b border-gray-300 p-2 outline-none focus:border-b-black"
           onChange={(e) => fuzzySearch(e.target.value)}
         />
         <div className="mr-4 flex w-full items-center justify-end">
@@ -140,18 +143,33 @@ export function Main({
           <Button onClick={() => refreshUserList()}>
             <img src={ImageRefresh} alt="刷新" />
           </Button>
-          <div className="ml-1">
-            <Button
-              onClick={async () => {
-                await resetUserData();
-                toast("用户信息已重置", {
-                  icon: "⚠️",
-                });
-                refreshUserList();
-              }}
+          <div
+            className="relative z-0 ml-1 flex h-fit w-fit"
+            onMouseEnter={() => {
+              setShowBatteryHint(true);
+            }}
+            onMouseLeave={() => {
+              setShowBatteryHint(false);
+            }}
+          >
+            <div
+              className={`${
+                showBatteryHint ? "visible" : "invisible"
+              } z-1 absolute -top-5`}
             >
-              <img src={ImageBatteryCharging} alt="重置" />
-            </Button>
+              <span className="w-fit text-xs font-thin">Reset all</span>
+            </div>
+            <div className="">
+              <Button
+                onClick={async () => {
+                  await resetUserData();
+                  Toast.warn("用户信息已重置");
+                  refreshUserList();
+                }}
+              >
+                <img src={ImageBatteryCharging} alt="重置" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
