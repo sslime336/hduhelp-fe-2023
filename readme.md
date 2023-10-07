@@ -4,7 +4,7 @@ React + tailwindcss + Go
 
 ## Features
 
-- 用户信息的增删查
+- 用户信息(包含tags)的增删改查
 - 根据用户姓名 Fuzzy 查询
 - 分页
 - 鉴权(fake, localStage)
@@ -30,7 +30,6 @@ React + tailwindcss + Go
 
 ## TODO
 
-- [ ] 用户信息、tags 增改
 - [ ] 加点动画
 
 ## 结构

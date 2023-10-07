@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"strconv"
@@ -50,13 +51,18 @@ func UpdateUser(c *gin.Context) {
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(401, "param is wrong")
 	}
-	updateUser(id, &req)
+	if err := updateUser(id, &req); err != nil {
+		c.JSON(200, err)
+	}
 	c.JSON(200, "ok")
 	return
 }
 
-func updateUser(id string, u *UserUpdateReq) {
-	idx, _ := strconv.Atoi(id)
+func updateUser(id string, u *UserUpdateReq) error {
+	idx, err := strconv.Atoi(id)
+	if err != nil {
+		return errors.New("用户ID非法")
+	}
 	idx--
 	Users[idx].StaffId = u.StaffId
 	Users[idx].Name = u.Name
@@ -64,6 +70,7 @@ func updateUser(id string, u *UserUpdateReq) {
 	Users[idx].Email = u.Email
 	Users[idx].Tags = u.Tags
 	Users[idx].UpdateTime = getTime()
+	return nil
 }
 
 type NewUserReq struct {
@@ -93,7 +100,7 @@ func NewUser(c *gin.Context) {
 	c.Status(200)
 }
 
-func ResetDate(c *gin.Context) {
+func ResetData(c *gin.Context) {
 	Users = append([]User(nil), backup...)
 	c.JSON(200, "用户已重置")
 }
