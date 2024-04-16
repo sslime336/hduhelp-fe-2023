@@ -24,7 +24,7 @@ export default function UserConsole() {
     itemsPerPage: 15,
   });
 
-  const refreshUserList = () => {
+  const refreshUserList = (refreshOnly) => {
     setSelectAll(false);
     setLastUpdateTime(getCurrentTimevalStr());
     mock.get("/users").then((resp) => {
@@ -40,7 +40,9 @@ export default function UserConsole() {
         setPaging({ currentIdx: 0, itemsPerPage: 15 });
       }
     });
-    Toast.info("用户信息已更新");
+    if (!refreshOnly) {
+      Toast.info("用户信息已更新");
+    }
   };
 
   const createUser = () => {

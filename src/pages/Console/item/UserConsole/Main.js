@@ -27,7 +27,7 @@ export function Main({
 
   useEffect(() => {
     document.title = "用户管理";
-    refreshUserList();
+    refreshUserList(false);
   }, []);
 
   const buildUserList = (userList, onStageUserList) => {
@@ -76,7 +76,7 @@ export function Main({
   const fuzzySearch = (target) => {
     fuzzyGuard.current = target;
     if (target === "") {
-      refreshUserList();
+      refreshUserList(true);
       return;
     }
     // Unicode / universal (50%-75% slower)

@@ -27,6 +27,10 @@ export const AuthProvider = {
   },
 
   get() {
-    return JSON.parse(localStorage.getItem("__auth"));
+    const auth = localStorage.getItem("__auth");
+    if (!auth) {
+      return null
+    }
+    return JSON.parse(auth);
   },
 };

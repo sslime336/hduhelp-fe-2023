@@ -13,7 +13,8 @@ const router = createBrowserRouter([
   {
     path: "/login",
     loader: ({ request }) => {
-      if (AuthProvider.get().isAuthenticated) {
+      const authProvider = AuthProvider.get()
+      if (authProvider && AuthProvider.get().isAuthenticated) {
         return redirect("/");
       }
       return null;
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
   {
     path: "/console",
     loader: ({ request }) => {
-      if (!AuthProvider.get().isAuthenticated) {
+      const authProvider = AuthProvider.get()
+      if (!authProvider || !AuthProvider.get().isAuthenticated) {
         let params = new URLSearchParams();
         params.set("callback", new URL(request.url).pathname);
         return redirect("/login?" + params.toString());
