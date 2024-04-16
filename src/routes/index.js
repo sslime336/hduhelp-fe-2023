@@ -1,9 +1,9 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
-import { AuthProvider } from "../store/auth";
-import Console from "../pages/Console";
-import NotFound from "../pages/errors/404";
-import Home from "./../pages/Home";
-import Login from "./../pages/Login";
+import { AuthProvider } from "store/auth";
+import Console from "pages/Console";
+import NotFound from "pages/errors/404";
+import Home from "pages/Home";
+import Login from "pages/Login";
 
 const router = createBrowserRouter([
   {

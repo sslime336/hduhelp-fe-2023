@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthProvider } from "../../store/auth";
-import AuthStatus from "../../components/AuthStatus";
-import Button from "../../components/Button";
-import Popup from "./../../components/Popup";
-import { ImageSetting, ImageUserSetting } from "../../resources";
+import { AuthProvider } from "store/auth";
+import AuthStatus from "components/AuthStatus";
+import Button from "components/Button";
+import Popup from "components/Popup";
+import { ImageSetting, ImageUserSetting } from "resources";
 import About from "./item/About";
 import Setting from "./item/Setting";
 import UserConsole from "./item/UserConsole";

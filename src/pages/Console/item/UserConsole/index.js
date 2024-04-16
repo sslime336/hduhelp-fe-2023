@@ -1,16 +1,16 @@
 import { useState } from "react";
-import Button from "../../../../components/Button";
-import Popup from "../../../../components/Popup";
-import { ImageUserSetting } from "../../../../resources";
-import { removeUserById } from "../../../../services/user";
-import { mock } from "../../../../utils/net";
-import { getCurrentTimevalStr } from "../../../../utils/time";
+import Button from "components/Button";
+import Popup from "components/Popup";
+import { ImageUserSetting } from "resources";
+import { removeUserById } from "services/user";
+import { mock } from "utils/net";
+import { getCurrentTimevalStr } from "utils/time";
 import Confirm from "./Confirm";
 import { Main } from "./Main";
 import NewUser from "./NewUser";
 import UserInfo from "./UserInfo";
 import toast from "react-hot-toast";
-import { Toast } from "../../../../utils/toast";
+import { Toast } from "utils/toast";
 
 export default function UserConsole() {
   const [userList, setUserList] = useState([]);

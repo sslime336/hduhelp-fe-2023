@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Input } from "../components/Input";
+import { Input } from "components/Input";
 import { ImageZako } from "../resources";
-import Button from "./../components/Button";
-import { AuthProvider } from "../store/auth";
+import Button from "components/Button";
+import { AuthProvider } from "store/auth";
 
 export default function Login() {
   let location = useLocation();

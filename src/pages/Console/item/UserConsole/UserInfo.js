@@ -1,6 +1,6 @@
-import Button from "../../../../components/Button";
-import { ImageDefaultUserAvatar } from "../../../../resources";
-import { updateUser } from "../../../../services/user";
+import Button from "components/Button";
+import { ImageDefaultUserAvatar } from "resources";
+import { updateUser } from "services/user";
 import { useEffect, useRef, useState } from "react";
 
 export default function UserInfo({ user, close, refreshUserList }) {

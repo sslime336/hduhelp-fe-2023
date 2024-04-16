@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { AudioZakoZako, ImageTakanashiHoshino } from "../resources";
+import { AudioZakoZako, ImageTakanashiHoshino } from "resources";
 
 export default function Home() {
   useEffect(() => {

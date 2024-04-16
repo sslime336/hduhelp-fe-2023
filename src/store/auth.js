@@ -1,4 +1,4 @@
-import { mock } from "../utils/net";
+import { mock } from 'utils/net';
 
 export const AuthProvider = {
   isAuthenticated: false,

@@ -1,10 +1,10 @@
 import uFuzzy from "@leeoniya/ufuzzy";
 import { useEffect, useRef, useState } from "react";
-import Button from "../../../../components/Button";
-import { ImageBatteryCharging, ImageRefresh } from "../../../../resources";
+import Button from "components/Button";
+import { ImageBatteryCharging, ImageRefresh } from "resources";
 import { UserListItem } from "./UserItem";
-import { resetUserData } from "../../../../services/user";
-import { Toast } from "../../../../utils/toast";
+import { resetUserData } from "services/user";
+import { Toast } from "utils/toast";
 
 export function Main({
   userList,

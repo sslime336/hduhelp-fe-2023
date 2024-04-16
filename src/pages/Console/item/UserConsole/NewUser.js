@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
-import Button from "../../../../components/Button";
-import { Input } from "../../../../components/Input";
-import { ImageDefaultUserAvatar } from "../../../../resources";
-import { createUser } from "../../../../services/user";
-import { isEmail, isPhoneNumber } from "../../../../utils/verify";
-import { Toast } from "../../../../utils/toast";
+import Button from "components/Button";
+import { Input } from "components/Input";
+import { ImageDefaultUserAvatar } from "resources";
+import { createUser } from "services/user";
+import { isEmail, isPhoneNumber } from "utils/verify";
+import { Toast } from "utils/toast";
 
 export default function NewUser({ callback, close }) {
   const newUserRef = useRef({

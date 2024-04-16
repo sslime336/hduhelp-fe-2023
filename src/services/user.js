@@ -1,4 +1,4 @@
-import { mock } from "../utils/net";
+import { mock } from "utils/net";
 
 async function getUserList() {
   await mock.get("/users").then((resp) => resp.data);

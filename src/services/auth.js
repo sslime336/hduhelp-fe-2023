@@ -1,4 +1,4 @@
-import { mock } from "./../utils/net";
+import { mock } from "utils/net";
 
 export async function login(userinfo) {
   return mock

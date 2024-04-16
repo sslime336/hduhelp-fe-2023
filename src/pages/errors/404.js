@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { ImageNotFound } from "../../resources";
+import { ImageNotFound } from "resources";
 
 export default function NotFound() {
   const navigate = useNavigate();

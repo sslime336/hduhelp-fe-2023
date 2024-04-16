@@ -1,5 +1,5 @@
-import Button from "../../../../components/Button";
-import { ImageDefaultUserAvatar } from "../../../../resources";
+import Button from "components/Button";
+import { ImageDefaultUserAvatar } from "resources";
 
 export function UserListItem({ index, user, onChange, showInfo }) {
   return (

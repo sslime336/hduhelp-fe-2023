@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import OnDev from "../../../components/OnDev";
-import { Toast } from "../../../utils/toast";
+import OnDev from "components/OnDev";
+import { Toast } from "utils/toast";
 
 export default function Setting() {
   useEffect(() => {
