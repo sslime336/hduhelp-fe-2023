@@ -1,3 +1,3 @@
 .PHONY: site
 site:
-	@(cd mock/ && make run) & npm run start
+	@(cd mock/ && make run) & yarn dev

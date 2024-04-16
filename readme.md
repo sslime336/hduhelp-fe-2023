@@ -11,10 +11,6 @@ React + tailwindcss + Go
 - Toast 轻提示
 - batteries-included(mock data)
 
-## TODO
-
-- [ ] 响应式布局
-
 ## 结构
 
 - mock: 后端数据
@@ -28,3 +24,25 @@ React + tailwindcss + Go
 ```shell
 make site
 ```
+
+Makefile 会在同一个终端同时运行前后端，如需要请分开运行
+
+```makefile
+.PHONY: site
+site:
+	@(cd mock/ && make run) & yarn dev
+```
+
+## 预览
+
+![login](imgs/login.png)
+
+![dashboard](imgs/dashboard.png)
+
+![newuser](imgs/newuser.png)
+
+![pagesplit](imgs/pagesplit.png)
+
+![deleteuser](imgs/deleteuser.png)
+
+![mock-reset](imgs/mock-reset.png)
